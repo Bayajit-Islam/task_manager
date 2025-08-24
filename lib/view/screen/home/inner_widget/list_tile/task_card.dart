@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:task_manager/model/task_model.dart';
+import 'package:task_manager/model/task_model/task_model.dart';
+import 'package:task_manager/utils/app_colors/app_colors.dart';
 import 'package:task_manager/utils/app_icons/app_icons.dart';
 import 'package:task_manager/utils/app_images/app_images.dart';
 import 'package:task_manager/view/widget/custome_text/custome_text.dart';
@@ -23,8 +24,16 @@ class TaskCard extends StatelessWidget {
               image: AssetImage(AppImages.profileAvater),
               fit: BoxFit.cover,
             ),
-            borderRadius: BorderRadius.circular(6)
+        borderRadius: BorderRadius.circular(6),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.dropshadow, 
+            offset: Offset(1, 1),  
+            blurRadius: 24,       
+            spreadRadius: 0,       
           ),
+        ],
+      ),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: Column(

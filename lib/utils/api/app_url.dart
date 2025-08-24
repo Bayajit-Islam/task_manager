@@ -17,4 +17,5 @@ class AppUrl {
 
   // <=========== Profile Url  ==========>
   static const String myPrfile = "$baseUrl/users/my-profile";
+
 }

@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:get/get.dart';
-import 'package:task_manager/model/task_model.dart';
+import 'package:task_manager/model/task_model/task_model.dart';
 import 'package:task_manager/utils/api/app_url.dart';
 import 'package:task_manager/utils/api/base_url.dart';
 

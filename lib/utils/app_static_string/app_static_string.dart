@@ -22,7 +22,7 @@ class AppString {
   static const String lastName = "Last Name";
   static const String confirmPassword = " Confirm password";
   static const String address = "Address";
-   static const String optional = " (Optional)";
+  static const String optional = " (Optional)";
   static const String terms =
       "I agree to the Terms & Conditions and Privacy Policy.";
   static const String allreadyHaveAccount = "Already have an account?";
@@ -40,21 +40,6 @@ class AppString {
   static const String taskDescripton = "Task Description";
   static const String saveTask = "Save Task";
   static const String updateTask = "Update Task";
-
-  //<==================== Dummy Task  list ====================>
-  static const String tasktitle1 = "Design Landing Page Header";
-  static const String tasktitle2 = "Develop Onboarding Screens";
-  static const String tasktitle3 = "Organize Task Card Components";
-  static const String tasktitle4 = "Prepare Terms & Privacy Pages";
-
-  static const String taskdesc1 =
-      "Create a clean, responsive header section with logo, navigation links, and a clear call-to-action button.";
-  static const String taskdesc2 =
-      "Design a 3-step onboarding flow to introduce users to core app features using illustrations and concise text.";
-  static const String taskdesc3 =
-      "Build reusable task card UI elements for listing, prioritizing, and editing individual tasks.";
-  static const String taskdesc4 =
-      "Create UI layouts for Terms & Conditions and Privacy Policy using scrollable content and soft brand styling.";
 
   //<==================== Task Details Button   ====================>
   static const String deletTask = "Delete Task";
@@ -75,4 +60,14 @@ class AppString {
   static const String removetask = " The task has been permanently removed.";
   static const String ok = " Ok";
   static const String succes = "Success";
+
+  //<==================== Profile Page  ====================>
+  static const String myProfile = "My ProFile";
+  static const String accountSetting = "Account Setting";
+  static const String termsAndCondition = "Terms & Condition";
+  static const String privacyPolicy = "Privacy policy";
+  static const String help = "Help/Support";
+  static const String logout = "Log Out";
+  static const String more = "More";
+
 }

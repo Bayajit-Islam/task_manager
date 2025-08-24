@@ -5,26 +5,30 @@ import 'package:task_manager/view/screen/auth_screen/signup_screen/signup_screen
 import 'package:task_manager/view/screen/edit_task/edit_task.dart';
 import 'package:task_manager/view/screen/home/inner_widget/bottom_nav/bottom_nav.dart';
 import 'package:task_manager/view/screen/home/home.dart';
+import 'package:task_manager/view/screen/my_profile/my_profile.dart';
+import 'package:task_manager/view/screen/profile/profile.dart';
 import 'package:task_manager/view/screen/splash_screen/splash_screen.dart';
 import 'package:task_manager/view/screen/task_details/task_details.dart';
 
 class AppRoutes {
- static   Map<String, Widget Function(BuildContext)> routes = {
-   //<==================== Splash Screen ====================>
+  static Map<String, Widget Function(BuildContext)> routes = {
+    //<==================== Splash Screen ====================>
+    "/splash_screen": (context) => SplashScreen(),
 
-    "/splash_screen":(context)=> SplashScreen(),
+    //<==================== Auth Screen ====================>
+    "/login_screen": (context) => LoginScreen(),
+    "/signup_screen": (context) => SignupScreen(),
 
-     //<==================== Auth Screen ====================>
-     "/login_screen":(context)=> LoginScreen(),
-     "/signup_screen":(context)=> SignupScreen(),
+    //<==================== Home Screen ====================>
+    "/home": (context) => Home(),
+    "/navBar": (context) => BottomNavBar(),
 
-      //<==================== Home Screen ====================>
-      "/home":(context)=> Home(),
-      "/navBar":(context)=>  BottomNavBar(),
+    "/taskDetails": (context) => TaskDetails(),
+    "/add_task": (context) => AddTask(),
+    "/edit_task": (context) => EditTask(),
 
-      "/taskDetails":(context)=> TaskDetails(),
-      "/add_task":(context)=> AddTask(),
-      "/edit_task":(context)=>  EditTask()
-
+    //<==================== Profile Screen ====================>
+    "/myprofile": (context) => MyProfile(),
+    "/profile": (context) => Profile(),
   };
 }

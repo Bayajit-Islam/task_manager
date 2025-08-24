@@ -11,6 +11,7 @@ class AppColors {
   //<==================== Dynamic Colors ====================>
   static const Color grey700 = Color(0xFF344054);
   static const Color dropshadow = Color.fromARGB(14, 0, 0, 0);
+  static const Color black = Colors.black;
   static const Color buttonText = Color(0xFFFFFFFF);
 
   //<==================== Brand Colors ====================>
