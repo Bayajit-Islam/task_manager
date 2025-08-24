@@ -6,6 +6,7 @@ import 'package:task_manager/view/screen/splash_screen/splash_screen.dart';
 
 void main() async {
   //dependency inject
+
   // ignore: unused_local_variable
   TaskServie taskServie = Get.put(TaskServie());
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_manager/service/profile_user_controller.dart';
 import 'package:task_manager/utils/app_colors/app_colors.dart';
 import 'package:task_manager/utils/app_icons/app_icons.dart';
 import 'package:task_manager/utils/app_images/app_images.dart';
@@ -7,8 +8,15 @@ import 'package:task_manager/utils/app_static_string/app_static_string.dart';
 import 'package:task_manager/view/screen/profile/inner_widget/inner_widget.dart';
 import 'package:task_manager/view/widget/custome_text/custome_text.dart';
 
-class Profile extends StatelessWidget {
+class Profile extends StatefulWidget {
   const Profile({super.key});
+
+  @override
+  State<Profile> createState() => _ProfileState();
+}
+
+class _ProfileState extends State<Profile> {
+  final ProfileUserController user = Get.put(ProfileUserController());
 
   @override
   Widget build(BuildContext context) {

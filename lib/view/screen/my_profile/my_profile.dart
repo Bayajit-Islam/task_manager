@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:task_manager/service/profile_user_controller.dart';
 import 'package:task_manager/utils/app_colors/app_colors.dart';
 import 'package:task_manager/utils/app_icons/app_icons.dart';
 import 'package:task_manager/utils/app_static_string/app_static_string.dart';
 import 'package:task_manager/view/screen/profile/inner_widget/inner_widget.dart';
 import 'package:task_manager/view/widget/custome_text/custome_text.dart';
 
-class MyProfile extends StatelessWidget {
+class MyProfile extends StatefulWidget {
   const MyProfile({super.key});
+
+  @override
+  State<MyProfile> createState() => _MyProfileState();
+}
+
+class _MyProfileState extends State<MyProfile> {
+  ProfileUserController user = Get.find<ProfileUserController>();
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +31,7 @@ class MyProfile extends StatelessWidget {
           color: AppColors.brand,
         ),
       ),
-      
+
       body: Column(
         children: [
           SizedBox(height: 20),
@@ -45,14 +54,32 @@ class MyProfile extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 10,),
-          CustomeText(text: "Mojahid",fontSize: 20,fontWeight: FontWeight.w600,),
-          SizedBox(height: 20,),
-          ProfileTile(icon: AppIcons.profile, text: "Mujahid",disableIcon: true,),
+          SizedBox(height: 10),
+          CustomeText(
+            text: user.profile.value.name,
+            fontSize: 20,
+            fontWeight: FontWeight.w600,
+          ),
+          SizedBox(height: 20),
+          ProfileTile(
+            icon: AppIcons.profile,
+            text: user.profile.value.name,
+            disableIcon: true,
+          ),
 
-          ProfileTile(icon: AppIcons.email, text: "Mujahid",disableIcon: true,),
+          ProfileTile(
+            icon: AppIcons.email,
+            text: user.profile.value.email,
+            disableIcon: true,
+          ),
 
-          ProfileTile(icon: AppIcons.location, text: "Mujahid",disableIcon: true,iconwidht: 18,sizeboxWidth: 16,),
+          ProfileTile(
+            icon: AppIcons.location,
+            text: "null",
+            disableIcon: true,
+            iconwidht: 18,
+            sizeboxWidth: 16,
+          ),
         ],
       ),
     );

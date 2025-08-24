@@ -37,19 +37,8 @@ class LoginController {
           //navigate to home
           Get.offAllNamed("/navBar");
         } else {
-          String errorMessage =
-              responseBody['message'] ?? 'Login failed. Please try again.';
+          String errorMessage = 'Login failed. Please try again.';
 
-          if (responseBody['errorSources'] != null &&
-              responseBody['errorSources'] is List) {
-            List errorSources = responseBody['errorSources'];
-            for (var error in errorSources) {
-              if (error['message'] != null) {
-                errorMessage = error['message'];
-                break;
-              }
-            }
-          }
 
           Get.snackbar(
             backgroundColor: AppColors.red500,
@@ -57,6 +46,12 @@ class LoginController {
             errorMessage,
           );
         }
+      }else{
+        Get.snackbar(
+            backgroundColor: AppColors.red500,
+            "Warning",
+            "Username & Password Wrong...",
+          );
       }
     } catch (e) {
       Get.snackbar(backgroundColor: AppColors.red500, "Error", "$e");

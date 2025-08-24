@@ -7,6 +7,12 @@ import 'package:task_manager/utils/api/base_url.dart';
 class ProfileUserController extends GetxService {
   var profile = UserProfile(name: "", email: "").obs;
 
+  @override
+  void onInit() {
+    super.onInit();
+    getProfileData();
+  }
+
   Future<void> getProfileData() async {
     final response = await BaseClient.getRequest(api: AppUrl.myPrfile);
 
@@ -14,15 +20,14 @@ class ProfileUserController extends GetxService {
       if (response.statusCode == 200) {
         var jsonData = jsonDecode(response.body);
 
-         if (jsonData["data"] != null) {
+        if (jsonData["data"] != null) {
           profile.value = UserProfile.fromJson(jsonData["data"]);
-        }else{
-            //now dont show anything
+        } else {
+          //now dont show anything
         }
       }
     } finally {
-
-        //show data 
+      //show data
     }
   }
 }
