@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:task_manager/model/task_model/task_model.dart';
-import 'package:task_manager/service/task_list.dart';
+import 'package:task_manager/controller/task_controller.dart';
 import 'package:task_manager/utils/app_colors/app_colors.dart';
 import 'package:task_manager/utils/app_icons/app_icons.dart';
 import 'package:task_manager/utils/app_static_string/app_static_string.dart';
@@ -18,7 +18,7 @@ class TaskDetails extends StatelessWidget {
   //get getx argument
   TaskModel task = Get.arguments;
   //dependecy inject
-  TaskServie taskServie = Get.find<TaskServie>();
+  TaskController taskController = Get.find<TaskController>();
 
   @override
   Widget build(BuildContext context) {
@@ -122,7 +122,7 @@ class TaskDetails extends StatelessWidget {
                                 //show loading
                                 CustomeLoading();
                                 //add to task
-                                taskServie.deletTask(task);
+                                taskController.deletTask(task);
                                 showDialog(
                                   context: context,
                                   builder: (context) {

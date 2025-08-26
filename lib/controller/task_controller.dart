@@ -4,7 +4,7 @@ import 'package:task_manager/model/task_model/task_model.dart';
 import 'package:task_manager/utils/api/app_url.dart';
 import 'package:task_manager/utils/api/base_url.dart';
 
-class TaskServie extends GetxService {
+class TaskController extends GetxService {
   RxList<TaskModel> taskList = <TaskModel>[].obs;
   var isLoading = false.obs;
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_manager/service/task_list.dart';
+import 'package:task_manager/controller/task_controller.dart';
 import 'package:task_manager/utils/app_colors/app_colors.dart';
 import 'package:task_manager/utils/app_images/app_images.dart';
 import 'package:task_manager/utils/app_static_string/app_static_string.dart';
@@ -16,12 +16,12 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   //dependecy  inject
-  TaskServie taskServie = Get.find<TaskServie>();
+  TaskController taskController = Get.find<TaskController>();
 
   @override
   void initState() {
     super.initState();
-    taskServie.getData();
+    taskController.getData();
   }
 
   @override
@@ -72,17 +72,17 @@ class _HomeState extends State<Home> {
             //list card
             Expanded(
               child: Obx(() {
-                if (taskServie.isLoading.value) {
+                if (taskController.isLoading.value) {
                   return Center(child: CircularProgressIndicator());
                 }
-                if (taskServie.taskList.isEmpty) {
+                if (taskController.taskList.isEmpty) {
                   return Center(child: Text("No tasks found"));
                 }
                 return ListView.builder(
-                  itemCount: taskServie.taskList.length,
+                  itemCount: taskController.taskList.length,
                   itemBuilder: (context, index) {
                     //get inidividual task
-                    final task = taskServie.taskList[index];
+                    final task = taskController.taskList[index];
                     return TaskCard(
                       taskModel: task,
                       onTap: () {

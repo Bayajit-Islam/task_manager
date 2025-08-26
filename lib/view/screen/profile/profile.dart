@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_manager/service/profile_user_controller.dart';
+import 'package:task_manager/controller/profile_user_controller.dart';
 import 'package:task_manager/utils/app_colors/app_colors.dart';
 import 'package:task_manager/utils/app_icons/app_icons.dart';
 import 'package:task_manager/utils/app_images/app_images.dart';

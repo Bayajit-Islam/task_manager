@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_manager/model/task_model/task_model.dart';
-import 'package:task_manager/service/task_list.dart';
+import 'package:task_manager/controller/task_controller.dart';
 import 'package:task_manager/utils/app_colors/app_colors.dart';
 import 'package:task_manager/utils/app_static_string/app_static_string.dart';
 import 'package:task_manager/view/widget/custome_button/custome_button.dart';
@@ -32,7 +32,7 @@ class _EditTaskState extends State<EditTask> {
   );
 
   //<==================== task serive ====================>
-  TaskServie taskServie = Get.find<TaskServie>();
+  TaskController taskController = Get.find<TaskController>();
 
   @override
   Widget build(BuildContext context) {
@@ -102,7 +102,7 @@ class _EditTaskState extends State<EditTask> {
                         //show loading
                         CustomeLoading();
                         //update task
-                        taskServie.updateTask(
+                        taskController.updateTask(
                           task,
                           titleController.text,
                           descController.text,
